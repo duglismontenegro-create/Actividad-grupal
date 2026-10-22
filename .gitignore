@@ -1,0 +1,35 @@
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Dependencias y logs
+node_modules/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Archivos compilados y binarios
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.o
+*.obj
+*.bin
+
+# Temporales y sistema
+*.tmp
+*.temp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Configuracion local de editores
+.vscode/
+.idea/

@@ -1,0 +1,12 @@
+{
+  "name": "adso-calidad-git",
+  "version": "1.0.0",
+  "description": "Proyecto colaborativo para practicar aseguramiento de calidad con Git y GitHub",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test"
+  },
+  "keywords": ["ADSO", "Git", "GitHub", "calidad"],
+  "license": "MIT"
+}
