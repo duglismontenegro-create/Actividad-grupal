@@ -1,3 +1,4 @@
+// Modulo de reportes v1.0
 /**
  * Genera un reporte sencillo a partir de una lista de usuarios.
  * @param {Array<object>} usuarios
