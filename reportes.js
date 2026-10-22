@@ -1,20 +1,28 @@
-const test = require("node:test");
-const assert = require("node:assert/strict");
-const { generarReporte } = require("./reportes");
+/**
+ * Genera un reporte sencillo a partir de una lista de usuarios.
+ * @param {Array<object>} usuarios
+ * @returns {{mensaje: string, totalUsuarios: number, usuarios: Array<object>} | {error: string}}
+ */
+function generarReporte(usuarios) {
+  if (
+    !Array.isArray(usuarios) ||
+    usuarios.some(
+      usuario =>
+        usuario === null ||
+        typeof usuario !== "object" ||
+        Array.isArray(usuario)
+    )
+  ) {
+    return {
+      error: "Los datos deben ser una lista válida de usuarios."
+    };
+  }
 
-test("genera reporte y cuenta usuarios", () => {
-  const usuarios = [{ nombre: "Ana" }, { nombre: "Luis" }];
-  const resultado = generarReporte(usuarios);
-  assert.equal(resultado.totalUsuarios, 2);
-  assert.equal(resultado.mensaje, "Reporte generado correctamente");
-});
+  return {
+    mensaje: "Reporte generado correctamente",
+    totalUsuarios: usuarios.length,
+    usuarios
+  };
+}
 
-test("acepta una lista vacía", () => {
-  const resultado = generarReporte([]);
-  assert.equal(resultado.totalUsuarios, 0);
-});
-
-test("rechaza datos que no sean una lista de objetos", () => {
-  assert.ok(generarReporte("no es una lista").error);
-  assert.ok(generarReporte([null]).error);
-});
+module.exports = { generarReporte };
