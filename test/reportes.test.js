@@ -18,3 +18,4 @@ test("rechaza datos que no sean una lista de objetos", () => {
   assert.ok(generarReporte("no es una lista").error);
   assert.ok(generarReporte([null]).error);
 });
+// Pruebas unitarias para modulo de reportes
